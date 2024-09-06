@@ -1,11 +1,8 @@
-'use client';
+"use client";
 
-import React from 'react';
-import {
-  ThemeProvider as MuiThemeProvider,
-  createTheme,
-} from '@mui/material/styles';
-import CssBaseline from '@mui/material/CssBaseline';
+import React from "react";
+import { ThemeProvider as MuiThemeProvider, createTheme } from "@mui/material/styles";
+import CssBaseline from "@mui/material/CssBaseline";
 
 type Props = {
   children: React.ReactNode;
@@ -14,9 +11,9 @@ type Props = {
 export default function ThemeProvider({ children }: Props) {
   const theme = createTheme({
     palette: {
-      mode: 'dark',
+      mode: "dark",
       primary: {
-        main: '#ff5252',
+        main: "#ff5252",
       },
     },
   });

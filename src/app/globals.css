@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
+/* body {
   font-family: Arial, sans-serif;
   background-color: #f7f7f7;
   margin: 0;
@@ -24,4 +24,4 @@ h1 {
 a {
   text-decoration: none;
   color:#0070f3;
-}
+} */

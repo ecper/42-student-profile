@@ -1,7 +1,7 @@
-import { User } from '@/interfaces/user';
-import UserProfile from '../user-profile';
-import { Container } from '@mui/material';
-import PostView from '@/sections/posts/post-view';
+import { User } from "@/interfaces/user";
+import UserProfile from "../user-profile";
+import { Container } from "@mui/material";
+import PostView from "@/sections/posts/post-view";
 
 type Props = {
   user: User;

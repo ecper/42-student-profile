@@ -1,6 +1,7 @@
-import ProfileImage from '@/components/ProfileImage';
-import { User } from '@/interfaces/user';
-import { Card, Stack, Typography } from '@mui/material';
+import { ProfileImage } from "@/components/Images";
+import { User } from "@/interfaces/user";
+import { Card, Stack, Typography } from "@mui/material";
+// import { motion } from "framer-motion";
 
 type Props = {
   user: User;
@@ -8,19 +9,29 @@ type Props = {
 
 export default function UserProfile({ user }: Props) {
   if (!user) {
+    {
+      {
+      }
+    }
     return <div>User not found</div>;
   }
 
   return (
-    <Card>
+    <Card
+      sx={{
+        width: 500,
+        height: 400,
+        m: 5,
+        borderRadius: 10,
+      }}>
       <Stack
-        sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}
-      >
-        <Typography variant='h5'>Profile</Typography>
+        spacing={2}
+        sx={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
+        <Typography variant="h5"></Typography>
         {/* image */}
-        <ProfileImage src={user.profileImg} intra={user.intra} />
+        <ProfileImage src={user.profileImg} alt={user.intra} />
         {/* intra name */}
-        <Typography variant='h3'>{user.intra}</Typography>
+        <Typography variant="h3">{user.intra}</Typography>
         {/* Description */}
         <Typography>Des: {user.profileDescription}</Typography>
 
