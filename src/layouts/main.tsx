@@ -18,10 +18,11 @@ import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
 import MenuItem from "@mui/material/MenuItem";
-import AdbIcon from "@mui/icons-material/Adb";
 import SettingsIcon from "@mui/icons-material/Settings";
 
 import { useBoolean, useToggle } from "@/hooks";
+
+import useBaseThemeContext from "@/theme/contexts/use-base-theme-context";
 
 const pages = [
   { name: "TOP", url: "/" },
@@ -29,19 +30,19 @@ const pages = [
   { name: "Info", url: "/info" },
   { name: "MyProfile", url: "/profile" },
 ];
-const settings = ["Profile", "Account", "Dashboard", "Logout"];
-const themeSettings = ["light", "dark"];
+const settings = ["TOP", "Members", "Info", "MyProfile"];
+const themeSettings: ("light" | "dark")[] = ["light", "dark"];
 
 function ResponsiveAppBar() {
   const navToggle = useToggle();
   const userToggle = useBoolean();
   const themeToggle = useBoolean();
 
+  const { changeMode } = useBaseThemeContext();
   return (
     <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          {/* <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} /> */}
           <Typography
             variant="h6"
             noWrap
@@ -93,7 +94,6 @@ function ResponsiveAppBar() {
               ))}
             </Menu>
           </Box>
-          {/* <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} /> */}
           <Typography
             variant="h5"
             noWrap
@@ -129,10 +129,10 @@ function ResponsiveAppBar() {
             <Drawer anchor="right" open={userToggle.value} onClose={userToggle.onFalse}>
               <Box sx={{ width: 250 }} role="presentation" onClick={userToggle.onFalse}>
                 <List>
-                  {settings.map((text) => (
-                    <ListItem key={text} disablePadding>
-                      <ListItemButton>
-                        <ListItemText primary={text} />
+                  {pages.map((page) => (
+                    <ListItem key={page.name} disablePadding>
+                      <ListItemButton component="a" href={page.url} onClick={userToggle.onFalse}>
+                        <ListItemText primary={page.name} />
                       </ListItemButton>
                     </ListItem>
                   ))}
@@ -151,7 +151,10 @@ function ResponsiveAppBar() {
                 <List>
                   {themeSettings.map((text) => (
                     <ListItem key={text} disablePadding>
-                      <ListItemButton>
+                      <ListItemButton
+                        onClick={() => {
+                          changeMode(text);
+                        }}>
                         <ListItemText primary={text} />
                       </ListItemButton>
                     </ListItem>

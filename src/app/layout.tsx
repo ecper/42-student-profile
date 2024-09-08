@@ -5,6 +5,7 @@ import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
 import ThemeProvider from "@/theme";
+import BaseThemeProvider from "@/theme/contexts/base-theme-provider";
 import ResponsiveAppBar from "@/layouts/main";
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -18,61 +19,30 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <ThemeProvider>
-          <ResponsiveAppBar></ResponsiveAppBar>
-          {/* <CardHeader className="bg-gray-700 text-gray-600 body-font">
-            <div className="flex justify-between">
-              <a className="flex align-center ml-4" href="https://42tokyo.jp/news/">
-                <img
-                  className="flex object-contain ml-2"
-                  src="https://42tokyo.jp/static/images/logo/42.svg"
-                  alt="42logo"></img>
-              </a>
-              <div className=" container mx-auto p-5 flex-col md:flex-row">
-                <nav className="flex md:ml-auto md:mr-auto text-base justify-center">
-                  <a className="text-white font-bold text-2xl mr-5 hover:text-gray-900" href={`/`}>
-                    TOP
-                  </a>
-                  <a className="text-white font-bold text-2xl mr-5 hover:text-gray-900" href={`/user`}>
-                    Members
-                  </a>
-                  <a className="text-white font-bold text-2xl mr-5 hover:text-gray-900" href={`/info`}>
-                    Info
-                  </a>
-                  <a className="text-white font-bold text-2xl mr-5 hover:text-gray-900" href={`/profile`}>
-                    MyProfile
-                  </a>
-                </nav>
+        <BaseThemeProvider>
+          <ThemeProvider>
+            <ResponsiveAppBar></ResponsiveAppBar>
+            {children}
+            <footer className="footer">
+              <div className="contact-info">
+                <h2>Contact phone!</h2>
+                <p>
+                  <a href="tel:+81363879202">TEL +81 3-6387-9202</a>
+                </p>
+                <p>Operation:42 Tokyo students</p>
               </div>
-            </div>
-          </CardHeader> */}
-          {children}
-          <footer className="footer">
-            <div className="contact-info">
-              <h2>Contact phone!</h2>
-              <p>
-                <a href="tel:+81363879202">TEL +81 3-6387-9202</a>
-              </p>
-              <p>Operation:42 Tokyo students</p>
-            </div>
-            <div>
-              {/* <iframe
-                src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12961.792590762123!2d139.67729118855812!3d35.690588000000005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018f3002dd8f339%3A0x21c5cb36a88710b2!2s42Tokyo!5e0!3m2!1sja!2sjp!4v1725548150647!5m2!1sja!2sjp'
-                width='100%'
-                height='600'
-                loading='lazy'
-                className='mapContainer'
-              /> */}
-              <iframe
+              <div>
+                {/* <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2622.9858411969153!2d2.3185009999999995!3d48.896606999999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66fa9e73a1ef7%3A0x4e808812dd36a382!2s42!5e0!3m2!1sja!2sjp!4v1725548274758!5m2!1sja!2sjp"
                 width="100%"
                 height="600"
                 loading="lazy"
                 className="mapContainer"
-              />
-            </div>
-          </footer>
-        </ThemeProvider>
+              /> */}
+              </div>
+            </footer>
+          </ThemeProvider>
+        </BaseThemeProvider>
       </body>
     </html>
   );
