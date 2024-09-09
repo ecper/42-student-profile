@@ -1,19 +1,24 @@
-"use client";
+'use client';
 
-import React from "react";
-import { ThemeProvider as MuiThemeProvider, createTheme } from "@mui/material/styles";
-import CssBaseline from "@mui/material/CssBaseline";
+import React, { useEffect } from 'react';
+import {
+  ThemeProvider as MuiThemeProvider,
+  createTheme,
+} from '@mui/material/styles';
+import CssBaseline from '@mui/material/CssBaseline';
 
-import useBaseThemeContext from "./contexts/use-base-theme-context";
+import useBaseThemeContext from './contexts/use-base-theme-context';
 
 type Props = {
   children: React.ReactNode;
 };
 
-// export const themeContext;
-
 export default function ThemeProvider({ children }: Props) {
   const { mode } = useBaseThemeContext();
+
+  useEffect(() => {
+    console.log({ mode });
+  }, [mode]);
 
   const theme = React.useMemo(
     () =>
@@ -21,7 +26,7 @@ export default function ThemeProvider({ children }: Props) {
         palette: {
           mode,
           primary: {
-            main: "#ff5252",
+            main: '#ff5252',
           },
         },
       }),
