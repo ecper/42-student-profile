@@ -1,6 +1,6 @@
 import { User } from "@/interfaces/user";
 import UserProfile from "../user-profile";
-import { Container } from "@mui/material";
+import { Container, Divider } from "@mui/material";
 import PostView from "@/sections/posts/post-view";
 
 type Props = {
@@ -13,11 +13,16 @@ export default function UserProfileView({ user }: Props) {
   }
 
   return (
-    <Container>
+    <Container className="flex flex-col items-start">
       <UserProfile user={user} />
-      {user.userPosts.map((post, i) => (
-        <PostView key={i} post={post} />
-      ))}
+      <div className="w-full flex flex-col items-start" style={{width: 300}}>
+        {user.userPosts.map((post, i) => (
+          <div key={i}>
+              <PostView key={i} post={post} />
+              <Divider/>
+          </div>
+        ))}
+      </div>
     </Container>
   );
 }
