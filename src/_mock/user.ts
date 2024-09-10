@@ -9,12 +9,14 @@ const userData: { [key: string]: User } = {
       {
         description: 'hello world',
         uploadedAt: new Date(),
-        viewNum: 0
+        viewNum: 0,
+        loveNum: 0
       },
       {
         description: 'はじめました',
         uploadedAt: new Date(),
-        viewNum: 0
+        viewNum: 0,
+        loveNum: 0
       },
     ],
   },
@@ -27,7 +29,8 @@ const userData: { [key: string]: User } = {
       {
         description: 'hello world',
         uploadedAt: new Date(),
-        viewNum: 0
+        viewNum: 0,
+        loveNum: 0
       },
     ],
   },
@@ -40,7 +43,8 @@ const userData: { [key: string]: User } = {
       {
         description: 'hello world',
         uploadedAt: new Date(),
-        viewNum: 0
+        viewNum: 0,
+        loveNum: 0
       },
     ],
   },
@@ -52,7 +56,8 @@ const userData: { [key: string]: User } = {
       {
         description: 'hello world',
         uploadedAt: new Date(),
-        viewNum: 0
+        viewNum: 0,
+        loveNum: 0
       },
     ],
   },

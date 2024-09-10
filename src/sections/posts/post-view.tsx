@@ -5,6 +5,7 @@ import { Post } from '@/interfaces/posts';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import { motion } from "framer-motion";
+import VisibilityIcon from '@mui/icons-material/Visibility';
 
 type Props = {
   post: Post;
@@ -50,15 +51,36 @@ export default function PostView({ post }: Props) {
     </motion.div>
 
   return (
-    <div className='container mx-auto p-8'>
+    <div className='container'>
       <div className='flex flex-col items-center bg-white p-8'>
         {month} {day}
         {/* Description */}
         <p className='text-gray-600 mt-2 text-center'>{post.description}</p>
         {/* Metadata */}
-        <div className='flex mt-5'>   
-          {loveIcon}
-          <div>{post.viewNum ?? 0}</div>
+        <div className='flex' style={{width: "100%", justifyContent: "space-around", marginTop: "1.5rem"}}>   
+          <div className='flex'>
+            {loveIcon}
+            <div style={{marginLeft: "8px"}}>{post.loveNum ?? 0}</div>
+          </div>
+          <div className='flex'>
+            <motion.div
+              animate={{
+                scale: [
+                  1.0,
+                  1.1,
+                  1.0
+                ],
+                transition: {
+                  repeat: Infinity,
+                  repeatDelay: 3
+                }
+              }}
+            >
+              <VisibilityIcon />
+            </motion.div>
+            
+            <div style={{marginLeft: "8px"}}>{post.viewNum ?? 0}</div>
+          </div>
         </div>
       </div>
     </div>
