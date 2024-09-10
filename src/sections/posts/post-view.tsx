@@ -24,7 +24,7 @@ export default function PostView({ post }: Props) {
     <motion.div animate={
     { 
       scale: [
-        1.5
+        1.3
       ],
       rotateZ: [
         360,
