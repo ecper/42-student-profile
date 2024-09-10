@@ -55,8 +55,10 @@ export default function PostView({ post }: Props) {
         {month} {day}
         {/* Description */}
         <p className='text-gray-600 mt-2 text-center'>{post.description}</p>
+        {/* Metadata */}
         <div className='flex mt-5'>   
           {loveIcon}
+          <div>{post.viewNum ?? 0}</div>
         </div>
       </div>
     </div>

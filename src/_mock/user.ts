@@ -8,11 +8,13 @@ const userData: { [key: string]: User } = {
     userPosts: [
       {
         description: 'hello world',
-        uploadedAt: new Date()
+        uploadedAt: new Date(),
+        viewNum: 0
       },
       {
         description: 'はじめました',
-        uploadedAt: new Date()
+        uploadedAt: new Date(),
+        viewNum: 0
       },
     ],
   },
@@ -24,7 +26,8 @@ const userData: { [key: string]: User } = {
     userPosts: [
       {
         description: 'hello world',
-        uploadedAt: new Date()
+        uploadedAt: new Date(),
+        viewNum: 0
       },
     ],
   },
@@ -36,7 +39,8 @@ const userData: { [key: string]: User } = {
     userPosts: [
       {
         description: 'hello world',
-        uploadedAt: new Date()
+        uploadedAt: new Date(),
+        viewNum: 0
       },
     ],
   },
@@ -47,7 +51,8 @@ const userData: { [key: string]: User } = {
     userPosts: [
       {
         description: 'hello world',
-        uploadedAt: new Date()
+        uploadedAt: new Date(),
+        viewNum: 0
       },
     ],
   },
